@@ -4,7 +4,8 @@ require 'soda/client'
 
 client = SODA::Client.new({:domain => "data.ny.gov", :app_token => ENV["NYDATAAPITOKEN"]})
 
-results = client.get("gvhy-7eph", {"$limit" => 50000, "$order" => "create_time", :county => "Monroe", :facility_name => "NY 96", :event_type => "accident"})
+# populate results with https://data.ny.gov/Transportation/Motor-Vehicle-Crashes-Case-Information-Three-Year-/e8ky-4vqe dataset
+results = client.get("w9dr-rq6v", {"$limit" => 50000, :"County Name" => "MONROE"})
 
 puts "Got #{results.count} results."
 =begin
