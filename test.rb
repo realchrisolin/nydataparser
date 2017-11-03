@@ -10,6 +10,6 @@ results = client.get("w9dr-rq6v", {"$limit" => 50000, "$order" => "date", :"Coun
 
 #puts "Got #{results.count} results."
 puts "Got #{results.count} results. Dumping results:"
-results.first.each do |key, value|
+results.last.each do |key, value|
 	puts "#{key}: #{value}"
 end
